@@ -1,2 +1,2 @@
 # dogethor.github.io
-hii what up 
+hii whats up 
