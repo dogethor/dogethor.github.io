@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktywna Oś Liczbowa – JSXGraph</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.4.5/jsxgraphcore.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #jxgbox { width: 600px; height: 300px; margin: auto; border: 1px solid #ccc; }
+        .controls { margin: 20px; }
+        input { width: 50px; text-align: center; font-size: 16px; }
+        button { font-size: 16px; padding: 5px 10px; }
+    </style>
+</head>
+<body>
+
+    <h2>Rozwiązywanie równania |x + a| = b</h2>
+    <div class="controls">
+        a = <input type="number" id="aValue" value="4">  
+        b = <input type="number" id="bValue" value="7">  
+        <button onclick="updateGraph()">Aktualizuj</button>
+    </div>
+
+    <div id="jxgbox"></div>
+
+    <script>
+        // Inicjalizacja JSXGraph
+        var board = JXG.JSXGraph.initBoard('jxgbox', {
+            boundingbox: [-15, 5, 15, -5], 
+            axis: true,
+            defaultAxes: {
+                x: { ticks: { visible: true, majorHeight: 1} },
+                y: { visible: false, ticks: { visible: false, majorHeight: 1 } }
+            },
+            grid: false
+        });
+
+        // Punkty rozwiązania
+        var x1 = board.create('point', [3, 0], { name: 'x₁', size: 4, color: 'blue' });
+        var x2 = board.create('point', [-11, 0], { name: 'x₂', size: 4, color: 'red' });
+
+        function updateGraph() {
+            let a = parseFloat(document.getElementById('aValue').value);
+            let b = parseFloat(document.getElementById('bValue').value);
+
+            // Sprawdzanie poprawności danych
+            if (b < 0) {
+                alert("Błąd: Wartość bezwzględna nie może być ujemna!");
+                return;
+            }
+
+            let sol1 = -a + b;
+            let sol2 = -a - b;
+
+            // Aktualizacja punktów na osi
+            x1.setPosition(JXG.COORDS_BY_USER, [sol1, 0]);
+            x2.setPosition(JXG.COORDS_BY_USER, [sol2, 0]);
+
+            board.update();
+        }
+
+        updateGraph(); // Wywołanie funkcji na start
+    </script>
+
+</body>
+</html>
+
