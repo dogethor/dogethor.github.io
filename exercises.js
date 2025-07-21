@@ -55,7 +55,7 @@ const exercises = [
     {
         question: '<b>Zadanie 2.</b> <br><br> Liczba <img src="zad2/zad2.png" style="width:100px;height:50px;"> jest równa:',
         answers: ["A. 5<sup>4</sup>", "B. 5<sup>-4</sup>", "C. 5<sup>0.25</sup>", "D. 5<sup>-0.25</sup>"],
-        correctAnswer: "",
+        correctAnswer: "B. 5<sup>-4</sup>",
         hint: "Stopień pierwiastaka jest jak mianownik w wykładniku. -5 możesz możesz włączyć do nawiasu (do każdego z czynników) i takie tam.",
         formulasPage: 5,
         solutionText: "",
@@ -66,6 +66,7 @@ const exercises = [
             { type: "video", src: "zad2/zad2rozw_step4.mp4", text:"Opuszczamy nawias, więc wykładnik -5 musimy wymnożyć przez wykładniki obu potęg." },
             { type: "video", src: "zad2/zad2rozw_step5.mp4", text:"" },
             { type: "video", src: "zad2/zad2rozw_step6.mp4", text:"" },
+
             { type: "text", text: "Wychodzi odpowiedź B" }
         ],
         solutionInteractive: null
@@ -77,7 +78,17 @@ const exercises = [
         hint: "Żeby wykazać podzielność przez <b>21</b>, będziemu rozłożyć tą liczbe na czynniki, czyli wyciągać coś przed nawias aby powstało: <b>... * 21</b>",
         formulasPage: 5,
         solutionText: "<b> 2<sup>100</sup> + 2<sup>98</sup> + 2<sup>96</sup> <br>2<sup>96</sup> * (2<sup>4</sup> + 2<sup>2</sup> + 2<sup>96</sup>) <br>2<sup>96</sup> * 21</b>  <- ta liczba jest podzielna przez <b>21</b>",
-        solutionStepByStep: null,
+        solutionStepByStep: [
+            { type: "video", src: "zad3/zad3rozw_step1.mp4", text:"" },
+            { type: "video", src: "zad3/zad3rozw_step2.mp4", text:"" },
+            { type: "video", src: "zad3/zad3rozw_step3.mp4", text:"" },
+            { type: "video", src: "zad3/zad3rozw_step4.mp4", text:"" },
+            { type: "video", src: "zad3/zad3rozw_step5.mp4", text:"" },
+            { type: "video", src: "zad3/zad3rozw_step6.mp4", text:"" },
+            { type: "video", src: "zad3/zad3rozw_step7.mp4", text:"" },
+            { type: "video", src: "zad3/zad3rozw_step8.mp4", text:"" },
+            { type: "text", text: "liczba c * 21 jest podzielne przez 21(c - cokolwiek całkowitego" }
+        ],
         solutionInteractive: null
     },
     {
